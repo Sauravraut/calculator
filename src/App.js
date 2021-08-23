@@ -1,23 +1,25 @@
 //This is a comment//
 import './App.css';
-import React from "react"; 
+import React, {useState} from "react"; 
 function App() { 
+  let [inp, setInp] = useState("");
+  let [res, setRes] = useState("");
   function eva(a){
-    document.getElementById("input").innerHTML += a;
+    setInp(inp + a);
   }
   function cls(){
-    document.getElementById("input").innerHTML = "";
-    document.getElementById("result").innerHTML = "";
+    setInp(inp = "");
+    setRes(res = "");
   }
-  function res(){
-    document.getElementById("result").innerHTML = eval(document.getElementById("input").innerHTML);
+  function evaluate(){
+    setRes(res = eval(inp));
   }
   return (
     <div id ="main">
       <div id="top">
         <div id = "screen">
-          <p id = "input"></p>
-          <p id = "result"></p>
+          <p id = "input">{inp}</p>
+          <p id = "result">{res}</p>
         </div>
       </div>
       <div id = "bottom">
@@ -37,7 +39,7 @@ function App() {
          <button onClick ={() => eva("0")}>0</button>
          <button onClick ={() => eva(" + ")}>+</button>
          <button onClick ={() => eva(" - ")}>-</button>
-         <button onClick ={res}>=</button>
+         <button onClick ={evaluate}>=</button>
         </div>
       </div> 
     </div>
