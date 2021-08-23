@@ -4,15 +4,26 @@ import React, {useState} from "react";
 function App() { 
   let [inp, setInp] = useState("");
   let [res, setRes] = useState("");
+  let [temp, setTemp] = useState(0);
   function eva(a){
-    setInp(inp + a);
+    if (temp == 0){
+      setInp(inp + a);
+    }
   }
   function cls(){
     setInp(inp = "");
     setRes(res = "");
+    setTemp(temp = 0);
   }
   function evaluate(){
-    setRes(res = eval(inp));
+    try{
+      (setRes(res = eval(inp))); 
+    }catch(error){
+      setTemp(temp = 1);
+      setInp(inp = "ERROR Press CLS");
+      setRes(res = "ERROR Press CLS");
+    }
+
   }
   return (
     <div id ="main">
