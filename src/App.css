@@ -1,0 +1,61 @@
+body{
+    margin:0;
+    padding:0;
+}
+#main{
+    width: 375px;
+    height: 500px;
+    background-color: grey;
+    position: absolute;
+    left:500px;
+    top:100px;
+    border-radius: 5px;
+}
+#top{
+    width: 375px;
+    height: 100px;
+    padding: 15px 15px 0 15px;
+}
+#screen{
+    width: 345px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.781);
+    border-radius: 5px;
+}
+#input, #result{
+    height: 40px;
+    width: 335px;
+    margin: 0;
+    padding: 5px;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+#result{
+    text-align: right;
+}
+#bottom{
+    width: 345px;
+    height: 345px;
+    padding: 15px; 
+}
+#keypad{
+    display: grid;
+    grid-template-columns:auto auto auto auto;
+    grid-row-gap: 15px;
+    justify-content: space-between;
+}
+#keypad button{
+    width: 75px;
+    height: 75px;
+    background-color: rgb(0, 0, 0);
+    color:white;
+    font-size: 25px;
+    text-align: center;
+    line-height: 75px;
+    border-radius: 5px;
+}
+
+#keypad button:hover{
+    cursor: pointer;
+    opacity: 80%;
+}
